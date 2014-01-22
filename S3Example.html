@@ -1,0 +1,45 @@
+
+
+
+
+
+<head>
+  <title>S3FileUploader</title>
+</head>
+
+<body>
+  {{> body}}
+  {{> BAB}}
+</body>
+
+<template name="body">
+  {{> S3FileUploader}}
+</template>
+
+<template name="S3FileUploader">
+  <table>
+    {{#unless uploaded}}
+    <tr>
+      <td>file: </td> <td><input type="file"></td>
+    </tr>
+    <tr>
+      <td>upload progress: </td> <td><progress value="{{progress}}" max="100"></progress></td>
+    </tr>
+    {{else}}
+    <tr>
+      <td>delete uploaded file: </td> <td><button name="delete">delete</button></td>
+    </tr>
+    <tr>
+      <td>key: </td><td>{{key}}</td>
+    </tr>
+    <tr>
+      <td>url: </td><td><a href="{{url}}">{{url}}</a></td>
+    </tr>
+    {{/unless}}
+  </table>
+</template>
+
+
+
+
+
